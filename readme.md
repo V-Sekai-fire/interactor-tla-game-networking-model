@@ -4,12 +4,14 @@ TLA+ specifications that model-check networking, consensus and storage designs f
 
 ## What it is for
 
-Each specification sits beside the model-checker configuration it runs with, so competing designs for queueing, commits, clocks and message scaling can be compared by checking them rather than by argument.
+Each specification sits in its own directory, most with the model-checker configuration it runs with, so competing designs for queueing, commits, clocks and message scaling can be compared by checking them rather than by argument.
 
 ## Build and run
 
+`just run` checks the queue-load specification. Check any other specification with its configuration:
+
 ```sh
-just run
+java -jar thirdparty/tla2tools.jar -config <dir>/<Spec>.cfg <dir>/<Spec>.tla
 ```
 
 It needs Java; the model checker is vendored in the repository.
